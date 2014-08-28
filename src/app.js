@@ -7,9 +7,13 @@ module.exports = {
   start: function () {
     github.credentials(function () {
       trello.credentials(function () {
-        trello.askID(function (taskID) {
-          trello.getCardInfo(taskID, function (taskId) {
-            console.log(taskId);
+        github.askRepository(function (repo) {
+          console.log('Repository: ' + repo);
+
+          trello.askID(function (taskID) {
+            trello.getCardInfo(taskID, function (taskId) {
+              console.log('Task ID: ' + taskId);
+            });
           });
         });
       });

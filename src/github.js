@@ -34,5 +34,23 @@ module.exports = {
         return cb();
       });
     });
-  }
+  },
+
+  askRepository: function (cb) {
+    var tempRepo = config.readConfig().temp.repository;
+    var tempRepoText = '[' + tempRepo + ']';
+
+    prompt.message = 'What is the repository name?';
+    prompt.start();
+
+    prompt.get({
+      properties: {
+        taskId: {
+          description: tempRepoText.magenta
+        }
+      }
+    }, function (err, result) {
+      return cb((!result.taskId) ? tempRepo : result.taskId);
+    });
+  },
 }

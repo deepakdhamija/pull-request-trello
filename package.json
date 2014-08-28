@@ -1,0 +1,19 @@
+{
+  "name": "wobo-trello-pr",
+  "version": "0.0.1",
+  "description": "Creates a github PR with the trello Card Information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "prtrello": "index.js"
+  },
+  "author": "Djalma Araujo",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^0.6.2",
+    "commander": "^2.3.0",
+    "prompt": "^0.2.13"
+  }
+}

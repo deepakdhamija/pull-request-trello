@@ -12,11 +12,13 @@ module.exports = {
 
     var properties = [
       {
-        name: 'username'
+        name: 'username',
+        required: true
       },
       {
         name: 'password',
-        hidden: true
+        hidden: true,
+        required: true
       }
     ];
 

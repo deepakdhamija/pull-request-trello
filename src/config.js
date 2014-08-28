@@ -1,6 +1,21 @@
 var fs         = require('fs');
 var file       = __dirname + '/../prtrello.json';
-var BLANK_DATA = {"app_key":"31bf1b83dbdaeb38fe6a7b29ef9132de","github":{"username":false,"password":false},"trello":{"token":false}}
+var BLANK_DATA = {
+  appKey: "31bf1b83dbdaeb38fe6a7b29ef9132de",
+  github: {
+    username: false,
+    password :false
+  },
+
+  trello:{
+    token :false
+  },
+
+  temp: {
+    repository: 'wobotinc/hpb',
+    taskId: '123456'
+  }
+};
 
 module.exports = {
   readConfig: function() {

@@ -32,6 +32,8 @@ program.on('--help', function(){
   console.log('');
 });
 
-app.start();
+if (process.argv.length == 2) {
+  app.start();
+}
 
 program.parse(process.argv);

@@ -1,3 +1,4 @@
+var prompt = require('prompt');
 var github = require('./github');
 var trello = require('./trello');
 var config = require('./config');
@@ -6,7 +7,11 @@ module.exports = {
   start: function () {
     github.credentials(function () {
       trello.credentials(function () {
-        console.log('SHOW');
+        trello.askID(function (taskID) {
+          trello.getCardInfo(taskID, function (taskId) {
+            console.log(taskId);
+          });
+        });
       });
     });
   },
@@ -15,3 +20,4 @@ module.exports = {
     config.reset();
   }
 };
+

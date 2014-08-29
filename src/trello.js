@@ -35,13 +35,13 @@ module.exports = {
     var tempID = config.readConfig().temp.taskId;
     var tempIDText = '[' + tempID + ']';
 
-    prompt.message = 'What is the task ID?';
+    prompt.message = '[Trello]'.verbose;
     prompt.start();
 
     prompt.get({
       properties: {
         taskId: {
-          description: tempIDText.magenta
+          description: 'What is the task ID? '.verbose + tempIDText.magenta
         }
       }
     }, function (err, result) {
@@ -56,7 +56,7 @@ module.exports = {
 
   getCardInfo: function (taskId, cb) {
     credentials = config.readConfig();
-    console.log('Getting trello card information...'.warn);
+    console.log('[Trello]'.verbose + 'Getting trello card information...'.warn);
 
     request({
       url: 'https://api.trello.com/1/cards/' + taskId + '?fields=name,idList,shortLink,shortUrl&key=' + credentials.appKey + '&token=' + credentials.trello.token,

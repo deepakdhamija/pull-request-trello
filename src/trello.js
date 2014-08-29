@@ -13,6 +13,11 @@ module.exports = {
     prompt.start();
 
     prompt.get(['token'], function (err, result) {
+      if (err) {
+        console.log('OK, bye!'.error);
+        process.exit();
+      }
+
       credentials = config.readConfig();
       credentials.trello.token = result.token;
       config.saveData(credentials, function () {
@@ -40,6 +45,11 @@ module.exports = {
         }
       }
     }, function (err, result) {
+      if (err) {
+        console.log('OK, bye!'.error);
+        process.exit();
+      }
+
       return cb((!result.taskId) ? tempID : result.taskId);
     });
   },
@@ -60,6 +70,10 @@ module.exports = {
 
       if (response.statusCode == 401) {
         console.log('Your token is invalid, please run prtrello -r'.error);
+        process.exit();
+
+      } else if (response.statusCode == 400) {
+        console.log('This task id is invalid, exiting..'.error);
         process.exit();
       }
 

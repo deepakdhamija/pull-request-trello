@@ -28,6 +28,11 @@ var Github = {
     prompt.start();
 
     prompt.get(properties, function (err, result) {
+      if (err) {
+        console.log('OK, bye!'.error);
+        process.exit();
+      }
+
       credentials.github.username = result.username;
       credentials.github.password = result.password;
 
@@ -87,6 +92,11 @@ var Github = {
         }
       }
     }, function (err, result) {
+      if (err) {
+        console.log('OK, bye!'.error);
+        process.exit();
+      }
+
       var pullRequest = {
         repository:  (result.repository) ? result.repository : Github.getRepository(),
         title:       (result.title) ? result.title : title,

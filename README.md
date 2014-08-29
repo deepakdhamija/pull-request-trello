@@ -1,4 +1,10 @@
 # Pull Request For Trello
+=========================
+
+[![NPM version](http://img.shields.io/npm/v/prtrello.svg?style=flat)](http://npmjs.org/prtrello)
+[![NPM downloads](http://img.shields.io/npm/dm/prtrello.svg?style=flat)](http://npmjs.org/prtrello)
+[![Dependencies Status](https://david-dm.org/djalmaaraujo/pull-request-trello.png?style=flat)](https://david-dm.org/djalmaaraujo/prtrello)
+[![License](http://img.shields.io/npm/l/prtrello.svg?style=flat)](http://npmjs.org/prtrello)
 
 Create a Pull Request Using Trello Card Information Automatically
 

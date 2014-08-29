@@ -133,6 +133,11 @@ var Github = {
         process.exit();
       }
 
+      if (body.message == 'Validation Failed') {
+        console.log('Looks like your branch it not pushed. Take a look at your branch on origin'.error);
+        process.exit();
+      }
+
       cb(body);
     });
   },

@@ -144,7 +144,7 @@ var Github = {
       }
 
       if (body.message == 'Validation Failed') {
-        console.log('Looks like your branch it not pushed. Take a look at your branch on origin'.error);
+        console.log('Looks like your branch it is not pushed. Push your branch before opening the PR'.error);
         process.exit();
       }
 

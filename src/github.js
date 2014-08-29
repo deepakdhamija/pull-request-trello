@@ -105,9 +105,9 @@ var Github = {
 
     var data = {
       title: pullRequest.title,
-      body: pullRequest.description + "\n" + pullRequest.comment
+      body: pullRequest.description + "\n" + pullRequest.comment,
       head: pullRequest.branch,
-      base: pullRequest.base
+      base: pullRequest.mergeBranch
     }
 
     request({

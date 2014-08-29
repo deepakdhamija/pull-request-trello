@@ -12,7 +12,6 @@ var BLANK_DATA = {
   },
 
   temp: {
-    repository: 'wobotinc/hpb',
     taskId: '123456'
   }
 };

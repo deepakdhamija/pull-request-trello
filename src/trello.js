@@ -1,4 +1,5 @@
 var prompt      = require('prompt');
+var request     = require('request');
 var config      = require('./config');
 var credentials = config.readConfig();
 
@@ -44,6 +45,25 @@ module.exports = {
   },
 
   getCardInfo: function (taskId, cb) {
-    cb(taskId);
+    credentials = config.readConfig();
+    console.log('Getting trello card information...'.warn);
+
+    request({
+      url: 'https://api.trello.com/1/cards/' + taskId + '?fields=name,idList,shortLink,shortUrl&key=' + credentials.appKey + '&token=' + credentials.trello.token,
+      method: 'GET',
+      json: true
+    }, function (error, response, body) {
+      if (error) {
+        console.log(error.error);
+        process.exit();
+      }
+
+      if (response.statusCode == 401) {
+        console.log('Your token is invalid, please run prtrello -r'.error);
+        process.exit();
+      }
+
+      cb(body);
+    });
   }
 };

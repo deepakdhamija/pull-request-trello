@@ -14,6 +14,14 @@ Run  ```prtrello`` for the first time and you will be requested to setup your Gi
 ## About Trello Token
 Since trello uses OAuth to authenticate, the tool can't get a fresh token automatically. With that in mind, you need to access ```https://trello.com/1/authorize?key=31bf1b83dbdaeb38fe6a7b29ef9132de&name=prtrello&expiration=never&response_type=token``` to get a new token. This token has no expiration date.
 
+## How the PR looks like:
+Title: [#shortTaskId] The title of the card
+Description: the shortlink of the task
+
+Ex:
+
+![image](https://raw.githubusercontent.com/djalmaaraujo/pull-request-trello/master/screenshot.png)
+
 ## Usage
 After your setup, the next time you use the tool you will receive these questions:
 ```

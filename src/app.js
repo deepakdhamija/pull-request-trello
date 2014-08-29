@@ -15,10 +15,10 @@ module.exports = {
 
               github.openPR(pullRequest, function (info) {
                 console.log('##########################################################'.help);
-                console.log('Pull Request Sent:' + info.url.green + ' shipit! :D'.silly)
+                console.log('Pull Request Sent:' + info.html_url.green + ' shipit! :D'.silly)
                 console.log('##########################################################'.help);
 
-                open(info.url);
+                open(info.html_url);
               });
             });
           });

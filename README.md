@@ -27,7 +27,9 @@ Getting trello card information...
 [Github]: This pull-request should be merge into: [master]:
 [Github]: Opening Pull Request...
 
-##########################################################
+#####################################################################
 Pull Request Sent:https://github.com/woboinc/hpb/pull/291 shipit! :D
-##########################################################
+#####################################################################
+
+At this time, your default browser will open a new window with the pull-request URL.
 ```

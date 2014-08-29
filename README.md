@@ -4,11 +4,11 @@ Create a Pull Request Using Trello Card Information Automatically
 
 ## Install
 ```bash
-npm install -g prtrello
+[sudo] npm install -g prtrello
 ```
 
 ## Configuration
-Run  ```prtrello`` for the first time and you will be requested to setup your Github credentials and Trello Token.
+Run  ```prtrello``` for the first time and you will be requested to setup your Github credentials and Trello Token.
 
 
 ## About Trello Token

@@ -2,6 +2,8 @@ var prompt      = require('prompt');
 var config      = require('./config');
 var credentials = config.readConfig();
 var sh          = require('execSync');
+var request     = require('request');
+var GITHUB_API  = 'https://api.github.com';
 
 var Github = {
   credentials: function (cb) {
@@ -99,7 +101,40 @@ var Github = {
   },
 
   openPR: function (pullRequest, cb) {
-    cb();
+    credentials = config.readConfig();
+
+    var data = {
+      title: pullRequest.title,
+      body: pullRequest.description + "\n" + pullRequest.comment
+      head: pullRequest.branch,
+      base: pullRequest.base
+    }
+
+    request({
+      url: GITHUB_API + '/repos/' + pullRequest.repository + '/pulls',
+      method: 'POST',
+      auth: {
+        username: credentials.github.username,
+        password: credentials.github.password
+      },
+      body: data,
+      json: true,
+      headers: {
+        'User-Agent': 'prtrello App'
+      }
+    }, function (error, response, body) {
+      if (error) {
+        console.log(error.error);
+        process.exit();
+      }
+
+      if (response.statusCode == 401) {
+        console.log('Your github credentials are wrong. Run prtrello -r and then prtrello'.error);
+        process.exit();
+      }
+
+      cb(body);
+    });
   },
 
   getBranchName: function () {

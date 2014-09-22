@@ -47,3 +47,9 @@ Pull Request Sent:https://github.com/woboinc/hpb/pull/291 shipit! :D
 
 At this time, your default browser will open a new window with the pull-request URL.
 ```
+
+## License
+[MIT License](http://djalmaaraujo.mit-license.org)
+
+---------------------------
+[cc company](http://nossomos.cc) - Code Consultants and Open Source Coding

@@ -66,7 +66,7 @@ var Github = {
     var title       = '[#' + card.shortLink + '] ' + card.name;
     var description = card.shortUrl;
     var comment     = '';
-    var tempMergedBranch = config.readConfig().temp.mergedBranch;
+    var tempMergeBranch = config.readConfig().temp.mergeBranch;
 
     prompt.message = '[Github]'.green;
     prompt.start();
@@ -89,7 +89,7 @@ var Github = {
           description: 'Enter the branch name of your task: '.green + '['.magenta + Github.getBranchName().magenta + ']'.magenta
         },
         mergeBranch: {
-          description: 'This pull-request should be merge into: '.green + '['.magenta + tempMergedBranch.magenta + ']'.magenta
+          description: 'This pull-request should be merge into: '.green + '['.magenta + tempMergeBranch.magenta + ']'.magenta
         }
       }
     }, function (err, result) {
@@ -104,19 +104,19 @@ var Github = {
         description: (result.description) ? result.description : description,
         comment:     (result.comment) ? result.comment : comment,
         branch:      (result.branch) ? result.branch : Github.getBranchName(),
-        mergeBranch: (result.mergeBranch) ? result.mergeBranch : tempMergedBranch
+        mergeBranch: (result.mergeBranch) ? result.mergeBranch : tempMergeBranch
       }
 
-      Github.savePreferences(tempMergedBranch, function () {
+      Github.savePreferences(tempMergeBranch, function () {
         cb(pullRequest);
       });
     });
   },
 
-  savePreferences: function(mergedBranch, cb) {
+  savePreferences: function(mergeBranch, cb) {
     var configData = config.readConfig();
 
-    configData.temp.mergeBranch = mergedBranch;
+    configData.temp.mergeBranch = mergeBranch;
     config.saveData(configData, function () {
       console.log(configData);
       return cb();

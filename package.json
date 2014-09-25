@@ -1,6 +1,6 @@
 {
   "name": "prtrello",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Creates a github Pull Request with the trello Card/Task Information",
   "main": "index.js",
   "scripts": {

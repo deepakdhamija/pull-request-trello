@@ -107,7 +107,7 @@ var Github = {
         mergeBranch: (result.mergeBranch) ? result.mergeBranch : tempMergeBranch
       }
 
-      Github.savePreferences(tempMergeBranch, function () {
+      Github.savePreferences(pullRequest.mergeBranch, function () {
         cb(pullRequest);
       });
     });

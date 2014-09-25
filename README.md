@@ -3,7 +3,7 @@
 
 [![NPM version](http://img.shields.io/npm/v/prtrello.svg?style=flat)](http://npmjs.org/prtrello)
 [![NPM downloads](http://img.shields.io/npm/dm/prtrello.svg?style=flat)](http://npmjs.org/prtrello)
-[![Dependencies Status](https://david-dm.org/djalmaaraujo/pull-request-trello.png?style=flat)](https://david-dm.org/djalmaaraujo/prtrello)
+[![Dependencies Status](https://david-dm.org/cconsultants/pull-request-trello.png?style=flat)](https://david-dm.org/djalmaaraujo/prtrello)
 [![License](http://img.shields.io/npm/l/prtrello.svg?style=flat)](http://npmjs.org/prtrello)
 
 Create a Pull Request Using Trello Card Information Automatically
@@ -26,7 +26,7 @@ Description: the shortlink of the task
 
 Ex:
 
-![image](https://raw.githubusercontent.com/djalmaaraujo/pull-request-trello/master/screenshot.png)
+![image](https://raw.githubusercontent.com/cconsultants/pull-request-trello/master/screenshot.png)
 
 ## Usage
 After your setup, the next time you use the tool you will receive these questions:

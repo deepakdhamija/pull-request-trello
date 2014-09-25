@@ -118,7 +118,6 @@ var Github = {
 
     configData.temp.mergeBranch = mergeBranch;
     config.saveData(configData, function () {
-      console.log(configData);
       return cb();
     });
   },

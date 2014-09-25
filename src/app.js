@@ -11,7 +11,7 @@ module.exports = {
         trello.askID(function (taskID) {
           trello.getCardInfo(taskID, function (card) {
             github.confirmPRDetails(card, function (pullRequest) {
-              console.log('[Github]'.green + ': '.white + 'Opening Pull Request...'.warn);
+              console.log('[Github]'.green + ': '.white + ' Opening Pull Request...'.warn);
 
               github.openPR(pullRequest, function (info) {
                 console.log('#####################################################################'.help);
